@@ -1,0 +1,251 @@
+/* ================= GLOBAL ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #000;
+}
+
+/* ================= TOP BAR ================= */
+.top-bar {
+  background: #000;
+  color: #fff;
+  padding: 10px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #222;
+  font-size: 14px;
+  position: relative;
+ 
+
+}
+
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.top-right select {
+  background: #111;
+  color: #fff;
+  border: 1px solid #333;
+  padding: 5px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.top-right a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.top-right a:hover {
+  color: #aaa;
+}
+
+/* ================= MAIN NAVBAR ================= */
+.navbar {
+  background: #000;
+  padding: 20px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* ================= MENU ================= */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.menu li {
+  position: relative;
+  color: #fff;
+  cursor: pointer;
+}
+
+.menu li span:hover {
+  color: #aaa;
+}
+
+/* ================= MEGA MENU ================= */
+.mega-menu {
+  position: absolute;
+  top: 60px;
+  left: -150px;
+  width: 900px;
+  background: #111;
+  padding: 40px;
+  display: none;
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.dropdown:hover .mega-menu {
+  display: block;
+}
+
+.mega-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.mega-column {
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+}
+
+.mega-column h4 {
+  color: #fff;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.mega-column a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.mega-column a:hover {
+  color: #fff;
+}
+
+/* RIGHT IMAGE */
+.mega-image img {
+  width: 220px;
+  border-radius: 8px;
+}
+
+/* ================= SMALL DROPDOWN ================= */
+.dropdown-menu {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background: #111;
+  padding: 20px;
+  display: none;
+  flex-direction: column;
+  border-radius: 8px;
+  min-width: 200px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+.dropdown-menu a {
+  color: #ccc;
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+  color: #fff;
+}
+
+/* ================= COLLECTION MENU ================= */
+.collection-menu {
+  position: absolute;
+  top: 60px;
+  left: -200px;
+  width: 800px;
+  background: #111;
+  padding: 30px;
+  display: none;
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.dropdown:hover .collection-menu {
+  display: block;
+}
+
+.collection-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.collection-item {
+  text-align: center;
+}
+
+.collection-item img {
+  width: 150px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.collection-item img:hover {
+  transform: scale(1.05);
+}
+
+.collection-item p {
+  color: #ccc;
+  font-size: 14px;
+}
+
+/* ================= RIGHT ICONS ================= */
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-icon {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #333;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.user-icon:hover {
+  background: #111;
+}
+
+.cart-box {
+  border: 1px solid #333;
+  padding: 10px 20px;
+  border-radius: 30px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cart-box:hover {
+  background: #111;
+}
+
+
+
+
