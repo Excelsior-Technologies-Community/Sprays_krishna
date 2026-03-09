@@ -269,9 +269,6 @@ const removeItem = (id) => {
             <button className="view-cart">View Cart</button>
             <button className="checkout">Proceed to checkout</button>
             <button className="checkout">Proceed to checkout</button>
-            <button className="checkout">Proceed to checkout</button>
-            <button className="checkout">Proceed to checkout</button>
-            <button className="checkout">Proceed to checkout</button>
           </div>
         </div>
       </div>
