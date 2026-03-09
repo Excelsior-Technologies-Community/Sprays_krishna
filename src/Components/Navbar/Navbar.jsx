@@ -1,6 +1,7 @@
 import React from 'react'
 import'./Navbar.css'
 import logo from'../../assets/imges/logo.png'
+import { Link } from "react-router-dom"
 
 const Navbar = () => {
   return (
@@ -59,7 +60,7 @@ const Navbar = () => {
 
                 <div className="mega-column">
                   <h4>Unisex Perfume</h4>
-                  <a href="#">Cologne Arabic Air</a>
+                <Link to="/cologne">Cologne Arabic Air</Link>
                   <a href="#">Cologne Gripped Rose</a>
                   <a href="#">Cologne Sapphire Sea</a>
                   <a href="#">Cologne To The Races</a>

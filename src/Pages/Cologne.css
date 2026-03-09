@@ -1,0 +1,376 @@
+.cologne{
+padding:60px 8%;
+background:#f5f5f5;
+font-family:Arial, sans-serif;
+}
+
+.cologne-container{
+display:flex;
+gap:60px;
+align-items:center;
+}
+
+/* LEFT */
+
+.cologne-left{
+display:flex;
+gap:20px;
+align-items:center;
+}
+
+.thumb-images{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.thumb-images img{
+width:60px;
+height:60px;
+object-fit:cover;
+border-radius:10px;
+cursor:pointer;
+border:2px solid transparent;
+transition:0.3s;
+}
+
+.thumb-images img:hover{
+border:2px solid black;
+}
+
+.main-image{
+background:white;
+padding:20px;
+border-radius:15px;
+}
+
+.main-image img{
+width:420px;
+border-radius:10px;
+}
+
+
+/* RIGHT */
+
+.cologne-right{
+max-width:500px;
+}
+
+.cologne-right h1{
+font-size:36px;
+margin-bottom:15px;
+}
+
+.cologne-right p{
+color:#555;
+line-height:1.6;
+margin-bottom:20px;
+}
+
+/* timer */
+
+.timer{
+background:black;
+color:white;
+display:inline-block;
+padding:10px 20px;
+border-radius:8px;
+margin-bottom:20px;
+}
+
+/* price */
+
+.price{
+margin-bottom:20px;
+color: azure;
+}
+
+.price .new{
+font-size:22px;
+font-weight:bold;
+margin-right:10px;
+}
+
+.price .old{
+text-decoration:line-through;
+color:#999;
+}
+
+/* quantity */
+
+.quantity span{
+display:block;
+margin-bottom:10px;
+}
+
+.qty-box{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:20px;
+}
+
+.qty-box button{
+width:35px;
+height:35px;
+border:none;
+background:#ddd;
+font-size:18px;
+cursor:pointer;
+}
+
+.qty-box input{
+width:40px;
+text-align:center;
+border:none;
+background:#eee;
+height:35px;
+}
+
+/* weight */
+
+.weight{
+margin-bottom:25px;
+}
+
+/* buttons */
+
+.btns{
+display:flex;
+gap:20px;
+}
+
+.cart{
+background:black;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:25px;
+cursor:pointer;
+}
+
+.buy{
+background:#111;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:25px;
+cursor:pointer;
+}
+
+.cart:hover,
+.buy:hover{
+opacity:0.8;
+}
+
+
+
+
+
+.recent{
+padding:70px 2%;
+background:#f5f5f5;
+text-align: center;
+}
+
+.recent h2{
+font-size:40px;
+margin-bottom:40px;
+}
+
+.recent-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+}
+
+.product-card{
+background:rgb(227, 226, 226);
+border-radius:15px;
+padding:20px;
+border:1px solid #eee;
+
+
+}
+
+.product-card img{
+width:100%;
+height:200px;
+object-fit:contain;
+}
+
+.product-card h4{
+margin:15px 0;
+}
+
+.price{
+display:flex;
+gap:10px;
+}
+
+.old{
+text-decoration:line-through;
+color:#888;
+}
+
+
+.recent .price{
+background: transparent;
+padding: 0;
+}
+
+.recent .new{
+background: transparent;
+color: black;
+}
+
+.recent .old{
+background: transparent;
+color: #888;
+}
+
+
+
+
+
+/* SPRAY SECTION */
+
+.spray-section{
+padding:80px 8%;
+background:#fff;
+}
+
+.spray-container{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:60px;
+}
+
+.spray-left{
+flex:1;
+}
+
+.spray-small{
+color:#999;
+font-size:14px;
+letter-spacing:2px;
+}
+
+.spray-left h2{
+font-size:42px;
+margin:15px 0;
+}
+
+.spray-left p{
+color:#555;
+line-height:1.6;
+margin-bottom:25px;
+}
+
+.spray-btn{
+padding:12px 28px;
+border:none;
+background:black;
+color:white;
+cursor:pointer;
+border-radius:5px;
+font-size:16px;
+}
+
+.spray-btn:hover{
+background:#333;
+}
+
+.spray-right{
+flex:1;
+text-align:center;
+}
+
+.spray-right img{
+width:100%;
+max-width:650px;
+height:auto;
+}
+
+
+
+
+/* REVIEWS */
+
+.reviews{
+padding:80px 8%;
+background:#f5f5f5;
+}
+
+.review-title{
+text-align:center;
+font-size:32px;
+margin-bottom:30px;
+}
+
+.review-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:40px;
+}
+
+.review-btn{
+background:black;
+color:white;
+border:none;
+padding:10px 25px;
+border-radius:25px;
+cursor:pointer;
+}
+
+.review-slider{
+position:relative;
+display:flex;
+align-items:center;
+}
+
+.review-container{
+display:flex;
+gap:25px;
+overflow-x:auto;
+scroll-behavior:smooth;
+}
+
+.review-container::-webkit-scrollbar{
+display:none;
+}
+
+.review-card{
+min-width:420px;
+background:white;
+border-radius:18px;
+padding:25px;
+display:flex;
+gap:15px;
+border:1px solid #eee;
+}
+
+.review-card img{
+width:70px;
+}
+
+.arrow{
+position:absolute;
+background:black;
+color:white;
+border:none;
+width:40px;
+height:40px;
+border-radius:10px;
+cursor:pointer;
+}
+
+.arrow.left{
+left:-20px;
+}
+
+.arrow.right{
+right:-20px;
+}

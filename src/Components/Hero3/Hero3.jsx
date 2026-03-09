@@ -8,9 +8,9 @@ const PRODUCTS = [
     brand: "Rihanna",
     price: 25,
     weight: "60ml",
-    img: "https://via.placeholder.com/200x250/000000/FFFFFF?text=Carlisle",
+    img: "/img/p1.png",
     hoverImg:
-      "https://via.placeholder.com/200x250/333333/FFFFFF?text=Carlisle+Back",
+      "/img/p11.png",
   },
   {
     id: 2,
@@ -19,9 +19,9 @@ const PRODUCTS = [
     price: 20,
     oldPrice: 25,
     weight: "75ml",
-    img: "https://via.placeholder.com/200x250/a0522d/FFFFFF?text=Althair",
+    img: "/img/p2.png",
     hoverImg:
-      "https://via.placeholder.com/200x250/8b4513/FFFFFF?text=Althair+Back",
+      "/img/p22.png",
   },
   {
     id: 3,
@@ -30,61 +30,94 @@ const PRODUCTS = [
     price: 20,
     oldPrice: 25,
     weight: "60ml",
-    img: "https://via.placeholder.com/200x250/cccccc/000000?text=Pegasus",
+    img: "/img/p3.png",
     hoverImg:
-      "https://via.placeholder.com/200x250/eeeeee/000000?text=Pegasus+Back",
+      "/img/p33.png",
   },
    {
-    id: 3,
+    id: 4,
     name: "Pegasus Eau De Parfum",
     brand: "Rihanna",
     price: 20,
     oldPrice: 25,
     weight: "60ml",
-    img: "https://via.placeholder.com/200x250/cccccc/000000?text=Pegasus",
+    img: "/img/p4.png",
     hoverImg:
-      "https://via.placeholder.com/200x250/eeeeee/000000?text=Pegasus+Back",
+      "/img/p44.png",
   },
    {
-    id: 3,
+    id: 5,
     name: "Pegasus Eau De Parfum",
     brand: "Rihanna",
     price: 20,
     oldPrice: 25,
     weight: "60ml",
-    img: "https://via.placeholder.com/200x250/cccccc/000000?text=Pegasus",
+    img: "/img/p5.png",
     hoverImg:
-      "https://via.placeholder.com/200x250/eeeeee/000000?text=Pegasus+Back",
+      "/img/p55.png",
   },
-   {
-    id: 3,
-    name: "Pegasus Eau De Parfum",
-    brand: "Rihanna",
-    price: 20,
-    oldPrice: 25,
-    weight: "60ml",
-    img: "https://via.placeholder.com/200x250/cccccc/000000?text=Pegasus",
-    hoverImg:
-      "https://via.placeholder.com/200x250/eeeeee/000000?text=Pegasus+Back",
-  },
+
 ];
+
 
 const Hero3 = () => {
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const scrollRef = useRef();
 
-  const addToCart = (product) => {
-    setCart([...cart, { ...product, quantity: 1 }]);
-    setIsCartOpen(true); // open mini cart
-  };
+ const addToCart = (product) => {
+  const exist = cart.find((item) => item.id === product.id);
 
-  // ✅ Close cart when clicking outside
+  if (exist) {
+    setCart(
+      cart.map((item) =>
+        item.id === product.id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      )
+    );
+  } else {
+    setCart([...cart, { ...product, quantity: 1 }]);
+  }
+
+  setIsCartOpen(true);
+};
+
+const increaseQty = (id) => {
+  setCart(
+    cart.map((item) =>
+      item.id === id
+        ? { ...item, quantity: item.quantity + 1 }
+        : item
+    )
+  );
+};
+
+const decreaseQty = (id) => {
+  setCart(
+    cart
+      .map((item) =>
+        item.id === id
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      )
+      .filter((item) => item.quantity > 0)
+  );
+};
+
+const removeItem = (id) => {
+  setCart(cart.filter((item) => item.id !== id));
+};
+
+  
   const closeCart = () => {
     setIsCartOpen(false);
   };
 
-  const subtotal = cart.reduce((acc, item) => acc + item.price, 0);
+  const subtotal = cart.reduce(
+  (acc, item) => acc + item.price * item.quantity,
+  0
+);
   const freeShippingThreshold = 900;
 
   const scrollLeft = () => {
@@ -194,17 +227,34 @@ const Hero3 = () => {
         </div>
 
         <div className="cart-items">
-          {cart.map((item, idx) => (
-            <div key={idx} className="cart-item">
-              <img src={item.img} alt={item.name} />
-              <div className="item-details">
-                <h4>{item.name}</h4>
-                <p>Weight: {item.weight}</p>
-                <p className="item-price">${item.price.toFixed(2)}</p>
-              </div>
-            </div>
-          ))}
+  {cart.map((item, idx) => (
+    <div key={idx} className="cart-item">
+      <img src={item.img} alt={item.name} />
+
+      <div className="item-details">
+        <h4>{item.name}</h4>
+        <p>Weight: {item.weight}</p>
+
+        <div className="qty-box">
+          <button onClick={() => decreaseQty(item.id)}>−</button>
+          <span>{item.quantity}</span>
+          <button onClick={() => increaseQty(item.id)}>+</button>
         </div>
+
+        <p className="item-price">
+          ${(item.price * item.quantity).toFixed(2)}
+        </p>
+      </div>
+
+      <button
+        className="delete-btn"
+        onClick={() => removeItem(item.id)}
+      >
+        🗑
+      </button>
+    </div>
+  ))}
+</div>
 
         <div className="cart-footer">
           <div className="footer-stats">
@@ -217,6 +267,10 @@ const Hero3 = () => {
           </div>
           <div className="footer-btns">
             <button className="view-cart">View Cart</button>
+            <button className="checkout">Proceed to checkout</button>
+            <button className="checkout">Proceed to checkout</button>
+            <button className="checkout">Proceed to checkout</button>
+            <button className="checkout">Proceed to checkout</button>
             <button className="checkout">Proceed to checkout</button>
           </div>
         </div>

@@ -1,0 +1,62 @@
+.hero8{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:80px 8%;
+background:#f6f6f6;
+font-family:Arial;
+gap:40px;
+}
+
+/* TEXT */
+
+.hero8-text{
+flex:1;
+max-width:350px;
+}
+
+.hero8-text h2{
+font-size:26px;
+margin-bottom:5px;
+}
+
+.hero8-text h3{
+font-size:18px;
+margin-bottom:15px;
+color:#222;
+}
+
+.hero8-text p{
+font-size:14px;
+color:#555;
+line-height:1.6;
+margin-bottom:20px;
+}
+
+/* BUTTON */
+
+.hero8-btn{
+padding:12px 25px;
+background:black;
+color:white;
+border:none;
+cursor:pointer;
+font-size:14px;
+}
+
+/* IMAGE */
+
+.hero8-image{
+flex:1;
+display:flex;
+justify-content:center;
+position:relative;
+}
+
+.hero8-image img{
+width:360px;
+object-fit:contain;
+}
+
+
+

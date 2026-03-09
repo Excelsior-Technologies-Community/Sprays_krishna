@@ -20,9 +20,10 @@ body {
   align-items: center;
   border-bottom: 1px solid #222;
   font-size: 14px;
-  position: relative;
- 
 
+  position: sticky;
+  top: 0;
+  z-index: 2000;   /* added */
 }
 
 .top-right {
@@ -57,8 +58,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   position: sticky;
-  z-index: 1000;
+  top: 40px;       /* important: navbar stays below top-bar */
+  z-index: 1500;   /* added */
 }
 
 .logo {
@@ -245,7 +248,3 @@ body {
 .cart-box:hover {
   background: #111;
 }
-
-
-
-
